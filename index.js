@@ -5,6 +5,7 @@ import "dotenv/config";
 import cors from "cors";
 import AuthRoute from "./Routes/AuthRoute.js";
 import UsersRoute from './Routes/UsersRoute.js'
+import PostRoute from './Routes/PostRoute.js'
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -35,6 +36,7 @@ const dbUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@clust
 // usage of routes
 app.use("/auth", AuthRoute);
 app.use('/user', UsersRoute)
+app.use('/post', PostRoute)
 
 
 app.listen(port, () => console.log(`Artiqy working on ${port}`));
